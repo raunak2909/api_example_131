@@ -1,15 +1,12 @@
 import 'package:api_example_131/models/quote_model.dart';
 
 class DataModel {
-  int limit;
-  int skip;
-  int total;
-  List<QuoteModel> quotes;
+  int? limit;
+  int? skip;
+  int? total;
+  List<QuoteModel>? quotes;
 
-  DataModel({required this.quotes,
-    required this.limit,
-    required this.skip,
-    required this.total});
+  DataModel({this.quotes, this.limit, this.skip, this.total});
 
   factory DataModel.fromJson(Map<String, dynamic> json){
 
