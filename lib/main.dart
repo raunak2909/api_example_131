@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:js_interop';
 
 import 'package:api_example_131/models/data_model.dart';
+import 'package:api_example_131/product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: ProductPage(),
     );
   }
 }
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
             if(snapshot.hasError){
               return Center(child: Text('Error: ${snapshot.error}'),);
             } else if(snapshot.hasData){
-              if(!snapshot.data!.isNull){
+              if(snapshot.data!=null){
                 return ListView.builder(
                     itemCount: snapshot.data!.quotes!.length,
                     itemBuilder: (_, index) {
