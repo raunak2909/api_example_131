@@ -16,6 +16,10 @@ class DataProductModel {
 
     List<ProductModel> mProducts = [];
 
+    /*json['products'].forEach((element) {
+      mProducts.add(ProductModel.fromJson(element));
+    });*/
+
     for(Map<String, dynamic> eachMap in json['products']){
       mProducts.add(ProductModel.fromJson(eachMap));
     }
